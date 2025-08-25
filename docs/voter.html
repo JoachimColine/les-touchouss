@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Les Tou'Chouss</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<script>
+    var colors = ["blue", "magenta"];
+    var colorIndex = 0;
+	changeColor();
+    function changeColor() {
+        var col = document.getElementById("body");
+        if( colorIndex >= colors.length ) {
+            colorIndex = 0;
+        }
+        col.style.backgroundColor = colors[colorIndex];
+        colorIndex++;
+    }
+</script>
+<body id="body" onload="changeColor();">
+
+<!-- Header -->
+<header id="header">
+    <div class="inner">
+        <a href="index.html" class="logo"><img src="images/les_touchouss_text.webp" height="23"></a>
+        <nav id="nav">
+            <a href="index.html">L'équipe</a>
+            <a href="events.html">événements</a>
+            <a href="photos.html">Photos</a>
+			<a href="voter.html">Voter</a>
+        </nav>
+    </div>
+</header>
+<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+
+<section id="main" style="text-align: center; color: white">
+			CLIQUER POUR CHANGER LE VOTE
+            <button style="color:white; background-color: transparent; width: 100%; padding: 300px 32px; border: none;" onclick="changeColor();"></button>
+
+</section>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/skel.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

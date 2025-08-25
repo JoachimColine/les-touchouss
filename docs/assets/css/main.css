@@ -1,0 +1,831 @@
+@import url(font-awesome.min.css);
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700|Pacifico|Fugaz One");
+
+/*
+Thanks:
+http://meyerweb.com/eric/tools/css/reset/ 
+https://stackoverflow.com/questions/15861093/what-does-webkit-text-size-adjust-do
+https://css-tricks.com/box-sizing/
+*/
+
+:root {
+  --mainColor1: #adf0ff; /* light blue */
+  --mainColor2: #40b3ff; /* darker blue */
+  --mainColor3: #0d6eff; /* also a darker blue */
+  --mainColor4: #e83ca9; /* pinkish */
+  --mainColor5: #e5474b; /* text color*/
+}
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+	-webkit-text-size-adjust: none;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+/* Basic */
+
+	@-ms-viewport {
+		width: device-width;
+	}
+
+	body {
+		-ms-overflow-style: scrollbar;
+		background: var(--mainColor1);
+		background-color: var(--mainColor1);
+		color: #111111;
+	}
+
+	body.is-loading *, body.is-loading *:before, body.is-loading *:after {
+		-moz-animation: none !important;
+		-webkit-animation: none !important;
+		-ms-animation: none !important;
+		animation: none !important;
+		-moz-transition: none !important;
+		-webkit-transition: none !important;
+		-ms-transition: none !important;
+		transition: none !important;
+	}
+
+	body, input, select, textarea {
+		font-family: "Lato", sans-serif;
+		font-size: 15pt;
+		font-weight: 300;
+		line-height: 2;
+	}
+
+	@media screen and (max-width: 1680px) {
+
+		body, input, select, textarea {
+			font-size: 13pt;
+		}
+		
+		#banner {
+			padding: 10em 0 8em 0;
+		}
+
+	}
+
+	@media screen and (max-width: 780px) {
+
+		body, input, select, textarea {
+			font-size: 12pt;
+		}
+
+	}
+
+	a {
+		-moz-transition: color 0.2s ease-in-out;
+		-webkit-transition: color 0.2s ease-in-out;
+		-ms-transition: color 0.2s ease-in-out;
+		transition: color 0.2s ease-in-out;
+		text-decoration: none;
+	}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+	strong, b {
+		font-weight: 700;
+	}
+
+	em, i {
+		font-style: italic;
+	}
+
+	p {
+		margin: 0 0 2em 0;
+	}
+
+	h1, h2 {
+		font-weight: 700;
+		line-height: 1.5;
+		margin: 0 0 1em 0;
+		text-transform: uppercase;
+	}
+
+		h1 a, h2 a, h3 a {
+			color: inherit;
+			text-decoration: none;
+		}
+
+	h1 {
+		font-size: 2em;
+		margin: 0 0 0.25em 0;
+	}
+
+	h2 {
+		font-size: 1.75em;
+	}
+	
+	h3 {
+		font-size: 1.75em;
+	}
+
+	sub {
+		font-size: 0.8em;
+		position: relative;
+		top: 0.5em;
+	}
+
+	sup {
+		font-size: 0.8em;
+		position: relative;
+		top: -0.5em;
+	}
+
+	pre {
+		-webkit-overflow-scrolling: touch;
+		font-family: "Courier New", monospace;
+		font-size: 0.9em;
+		margin: 0 0 2em 0;
+	}
+
+	hr {
+		border: 0;
+		border-bottom: solid 1px;
+		margin: 2em 0;
+	}
+
+		hr.major {
+			margin: 3em 0;
+		}
+
+	.align-left {
+		text-align: left;
+	}
+
+	.align-center {
+		text-align: center;
+	}
+
+	.align-right {
+		text-align: right;
+	}
+
+	input, select, textarea {
+		color: #e5474b;
+	}
+
+	a {
+		color: #e5474b;
+	}
+
+	strong, b {
+		color: #e5474b;
+	}
+
+	h1, h2 {
+		color: var(--mainColor5);
+	}
+
+	hr {
+		border-bottom-color: #e5474b;
+	}
+
+	section.special, article.special {
+		text-align: center;
+	}
+
+	section .inner {
+		max-width: 65em;
+		width: calc(100% - 6em);
+		margin: 0 auto;
+	}
+
+	header p {
+		position: relative;
+		margin: 0 0 1.5em 0;
+	}
+
+	header h2 + p {
+		font-size: 1.25em;
+		margin-top: -1em;
+	}
+
+	header p {
+		color: #717171;
+	}
+
+/* Header */
+
+	body {
+		position: relative;
+		padding-top: 5em;
+	}
+
+	#header {
+		background: var(--mainColor3);
+		color: #d5d5d5;
+		cursor: default;
+		height: 5em;
+		left: 0;
+		line-height: 5em;
+		position: fixed;
+		text-align: right;
+		top: 0;
+		width: 100%;
+		z-index: 10001;
+	}
+
+		#header .inner {
+			max-width: 65em;
+			width: calc(100% - 6em);
+			margin: 0 auto;
+			position: relative;
+		}
+
+		#header .logo {
+			font-family: TouchoussFont; /*'Fugaz One'*/ 
+			display: inline-block;
+			height: inherit;
+			left: 0;
+			line-height: inherit;
+			margin: 0;
+			padding: 0;
+			position: absolute;
+			top: 0;
+			color: #ffffff;
+			font-size: 1.75em;
+			text-transform: none;
+			font-weight: normal;
+			padding: 0;
+		}
+
+			#header .logo:hover {
+				color: rgba(229, 71, 75, 0.75);
+			}
+
+		#header a {
+			-moz-transition: color 0.2s ease-in-out;
+			-webkit-transition: color 0.2s ease-in-out;
+			-ms-transition: color 0.2s ease-in-out;
+			transition: color 0.2s ease-in-out;
+			display: inline-block;
+			padding: 0 2em;
+			color: #ffffff;
+			text-decoration: none;
+			text-transform: uppercase;
+			font-weight: 700;
+			font-size: .85em;
+		}
+
+			#header a:hover {
+				color: rgba(255, 255, 255, 0.75);
+			}
+
+			#header a:last-child {
+				padding-right: 0em;
+			}
+
+	@media screen and (max-width: 780px) {
+
+		#header {
+			min-width: 320px;
+		}
+
+	}
+
+/* Menu */
+
+	#nav {
+		display: inline-block;
+	}
+
+		@media screen and (max-width: 780px) {
+
+			#nav {
+				display: none;
+			}
+
+		}
+
+	.navPanelToggle {
+		position: fixed;
+		text-decoration: none;
+		height: 4em;
+		right: 3em;
+		top: .75em;
+		width: 4em;
+		display: none;
+		z-index: 10002;
+	}
+
+		.navPanelToggle:before {
+			/*-moz-osx-font-smoothing: grayscale;*/
+			-webkit-font-smoothing: antialiased;
+			font-family: FontAwesome;
+			font-style: normal;
+			font-weight: normal;
+			text-transform: none !important;
+			color: #fff;
+			display: block;
+			font-size: 16px;
+			height: 2.25em;
+			left: 0.5em;
+			line-height: 2.25em;
+			position: absolute;
+			text-align: center;
+			top: 0.5em;
+			width: 3.5em;
+		}
+
+		@media screen and (max-width: 780px) {
+
+			.navPanelToggle {
+				display: block;
+			}
+
+		}
+
+		@media screen and (max-width: 780px) {
+
+			.navPanelToggle {
+				right: 1em;
+			}
+
+		}
+
+		.navPanelToggle *:before {
+			color: #fff;
+			display: block;
+			font-size: 16px;
+			height: 2.25em;
+			left: 0.5em;
+			line-height: 2.25em;
+			position: absolute;
+			text-align: center;
+			top: 0.5em;
+			width: 3.5em;
+		}
+
+	#navPanel {
+		-moz-transform: translatex(20em);
+		-webkit-transform: translatex(20em);
+		-ms-transform: translatex(20em);
+		transform: translatex(20em);
+		-moz-transition: -moz-transform 0.2s ease-in-out, visibility 0.2s ease-in-out;
+		-webkit-transition: -webkit-transform 0.2s ease-in-out, visibility 0.2s ease-in-out;
+		-ms-transition: -ms-transform 0.2s ease-in-out, visibility 0.2s ease-in-out;
+		transition: transform 0.2s ease-in-out, visibility 0.2s ease-in-out;
+		-webkit-overflow-scrolling: touch;
+		visibility: hidden;
+		overflow-y: auto;
+		position: fixed;
+		right: 0;
+		top: 0;
+		background: var(--mainColor3);
+		color: #fff;
+		height: 100%;
+		max-width: 80%;
+		width: 20em;
+		padding: 1.5em;
+		text-transform: uppercase;
+		z-index: 10003;
+		display: none;
+	}
+
+		#navPanel.visible {
+			-moz-transform: translatex(0);
+			-webkit-transform: translatex(0);
+			-ms-transform: translatex(0);
+			transform: translatex(0);
+			box-shadow: 0 0 1.5em 0 rgba(0, 0, 0, 0.2);
+			visibility: visible;
+		}
+
+		#navPanel a:not(.close) {
+			border-top: solid 1px rgba(255, 255, 255, 0.1);
+			color: #fff;
+			font-weight: 700;
+			display: block;
+			padding: 0.75em 0;
+			text-decoration: none;
+		}
+
+			#navPanel a:not(.close):first-child {
+				border: none;
+			}
+
+		#navPanel .close {
+			text-decoration: none;
+			-moz-transition: color 0.2s ease-in-out;
+			-webkit-transition: color 0.2s ease-in-out;
+			-ms-transition: color 0.2s ease-in-out;
+			transition: color 0.2s ease-in-out;
+			-webkit-tap-highlight-color: transparent;
+			border: 0;
+			color: #fff;
+			cursor: pointer;
+			display: block;
+			height: 4em;
+			padding-right: 1.25em;
+			position: absolute;
+			right: 0;
+			text-align: right;
+			top: 0;
+			vertical-align: middle;
+			width: 5em;
+		}
+
+			#navPanel .close:before {
+				/*-moz-osx-font-smoothing: grayscale;*/
+				-webkit-font-smoothing: antialiased;
+				font-family: FontAwesome;
+				font-style: normal;
+				font-weight: normal;
+				text-transform: none !important;
+				content: '\f00d';
+				width: 3em;
+				height: 3em;
+				line-height: 3em;
+				display: block;
+				position: absolute;
+				right: 0;
+				top: 0;
+				text-align: center;
+			}
+
+			#navPanel .close:hover {
+				color: inherit;
+			}
+
+		@media screen and (max-width: 780px) {
+
+			#navPanel {
+				display: block;
+			}
+
+		}
+
+/* Banner */
+
+	#banner {
+		background-color: var(--mainColor1);
+		color: var(--mainColor1);
+		padding: 3em 0 2em 0;
+		background-image: url("../../images/skiing.gif");
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		text-align: left;
+		position: relative;
+		z-index: 9999;
+	}
+		#banner img {
+			padding: 5px;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			width: 250px;
+		}
+
+		#banner input, #banner select, #banner textarea {
+			color: #ffffff;
+		}
+
+		#banner a {
+			color: #ffffff;
+		}
+
+		#banner strong, #banner b {
+			color: #ffffff;
+		}
+
+		#banner h1, #banner h2 {
+			color: #fff;
+			text-align: center;
+		}
+
+
+		#banner hr {
+			border-bottom-color: #fff;
+		}
+		#banner .button.special {
+			background-color: var(--mainColor1);
+			color: #e5474b !important;
+		}
+
+		#banner:after {
+			-moz-transition: opacity 10s ease;
+			-webkit-transition: opacity 10s ease;
+			-ms-transition: opacity 10s ease;
+			transition: opacity 10s ease;
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			display: block;
+			top: 0;
+			left: 0;
+			background-color: var(--mainColor2);
+			opacity: 0.5;
+		}
+
+		#banner .inner {
+			max-width: 65em;
+			width: calc(100% - 6em);
+			margin: 0 auto;
+			position: relative;
+			z-index: 10000;
+			line-height: 1.5;
+		}
+
+		#banner h1 {
+			font-size: 2em;
+			margin: 0 0 1em 0;
+			padding: 0;
+			letter-spacing: 3px;
+			font-weight: 700;
+		}
+
+			#banner h1 span {
+				font-weight: 400;
+			}
+
+		body.is-loading #banner:after {
+			opacity: 1;
+		}
+
+		@media screen and (max-width: 780px) {
+
+			#banner {
+				padding: 12em 0 10em 0;
+			}
+
+				#banner br {
+					display: none;
+				}
+
+		}
+		
+		#banner2 {
+		background-color: var(--mainColor1);
+		color: var(--mainColor1);
+		padding: 3em 0 2em 0;
+		background-image: url("../../images/scene.webp");
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		text-align: left;
+		position: relative;
+		z-index: 9999;
+		height: 250px;
+		opacity: 0.75;
+		}	
+
+/* CONTENT */
+
+	#one {
+		padding: 6em 0 4em 0;
+	}
+
+	@media screen and (max-width: 780px) {
+
+		#one {
+			padding: 4em 0 2em 0;
+		}
+
+	}
+	
+	#main {
+		padding: 6em 0 4em 0;
+	}
+
+	@media screen and (max-width: 780px) {
+
+		#main {
+			padding: 4em 0 2em 0;
+		}
+
+	}
+	
+	.flex{display: flex;}
+	figure {
+	  display: table;
+	  width: 50%;
+	  margin:0;
+	}
+
+	figcaption {
+	  display: table-caption;
+	  caption-side: top;
+	}
+	
+	div.gallery {
+  //border: 1px solid var(--mainColor2);
+  padding: 1px;
+  margin: 5px;
+  background: rgba(25, 70, 100, 0.1);
+}
+
+div.gallery:hover {
+  //border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 5px;
+  text-align: center;
+  font-size: 25px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+		
+
+#content {
+  max-width: 80%;
+  height: 80%;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  text-align: center;
+}
+		
+
+/* Footer */
+
+	#footer {
+		background-color: var(--mainColor4);
+		color: var(--mainColor4);
+		padding: 4em 0 2em 0;
+		background: var(--mainColor4);
+	}
+	#footer h1, #footer h2 {
+		color: #fff;
+	}
+
+
+/* Styling the events section */
+
+/* Styling the time class of events section */
+section .events ul li .time {
+	position: relative;
+	padding: 20px;
+	background: var(--mainColor3);
+	box-sizing: border-box;
+	width: auto;
+	min-width: 120px;
+	height: 100px;
+	float: left;
+	text-align: center;
+	transition: .5s;
+	margin-right: 20px;
+	margin-bottom: 5px;
+}
+/* Styling the hover effect
+	of events section */
+section .events ul li:hover .time {
+	background: var(--mainColor4);
+}
+/* Styling the header of time
+	class of events section */
+section .events ul li .time h2 {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #fff;
+	font-size: 60px;
+	line-height: 30px;
+}
+/* Styling the texts of time
+class of events section */
+section .events ul li .time h2 span {
+	font-size: 30px;
+}
+
+/* Styling the details
+class of events section */
+section .events ul li .details {
+	padding: 20px;
+	margin-bottom: 20px;
+	background: rgba(25, 70, 100, 0.1);
+	box-sizing: border-box;
+	width: calc(100% - 140px);
+	//max-width: calc(100% - 140px);
+	height: 100%;
+	float: left;
+}
+
+@media screen and (max-width: 780px) {
+		section .events ul li .details {
+			width: 100%;
+		}
+
+	}
+/* Styling the header of the
+details class of events section */
+/* Styling the lists of details
+class of events section */
+/* Styling the links of details
+class of events section */
+section .events ul li .details a {
+	display: inline-block;
+	text-decoration: none;
+	background: var(--mainColor1);
+	padding: 10px 15px;
+	border: 1.5px solid var(--mainColor2);
+	margin-top: 8px;
+	font-size: 16px;
+	transition: .5s;
+}
+/* Styling the details class's hover effect */
+section .events ul li .details a:hover {
+	background: var(--mainColor4);
+	color: #fff;
+	border-color: var(--mainColor4 );
+}
+
+#eventimage {
+	float: left;
+	margin: 0 15px 0 0;
+}
+
+#ifrid {
+	min-height: 700px;
+}
